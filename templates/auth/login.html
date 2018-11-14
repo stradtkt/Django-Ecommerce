@@ -1,0 +1,18 @@
+{% extends 'auth/layout.html' %}
+{% block title %} Login Page | {{block.super}} {% endblock %}
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <h1 class="text-center mt-5 mb-5">Login</h1>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Send" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
