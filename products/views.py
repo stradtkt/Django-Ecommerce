@@ -61,5 +61,5 @@ class ProductDetailSlugView(DetailView):
             qs = Product.objects.filter(slug=slug, active=True)
             instance = qs.first()
         except:
-            raise Http404("Uhhmmm ")
+            raise Http404("There was an error")
         return instance
