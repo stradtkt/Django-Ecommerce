@@ -1,11 +1,7 @@
 from django.conf.urls import url
-
-from .views import (
-    cart_home,
-    cart_update
-)
+from . import views
 
 urlpatterns = [
-    url(r'^$', cart_home, name='home'),
-    url(r'^update/$', cart_update, name='update'),
+    url(r'^$', views.cart_home, name='home'),
+    url(r'^update/$', views.cart_update, name='update'),
 ]
