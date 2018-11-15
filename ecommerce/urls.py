@@ -18,7 +18,8 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
 
-
+from products.views import ProductListView, ProductDetailView
+from carts.views import carts_home
 from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
