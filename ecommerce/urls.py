@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
-from products.views import ProductListView, ProductDetailView
-from carts.views import carts_home
 from . import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home_page),
@@ -28,6 +27,9 @@ urlpatterns = [
     url(r'^contact$', views.contact_page),
     url(r'^auth/login$', views.login_page),
     url(r'^auth/register$', views.register_page),
+    url(r'^cart/', include("carts.urls", namespace='cart')),
+    url(r'^products/', include("products.urls", namespace='products')),
+    url(r'^users/', include("users.urls", namespace='users')),
 ]
 
 if settings.DEBUG:

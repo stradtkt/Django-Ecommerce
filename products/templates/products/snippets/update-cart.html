@@ -1,0 +1,8 @@
+<form action="{% url 'cart:update' %}" method="POST">
+    <input type="hidden" name="product" value="{{product.id}}">
+    {% if product in cart.products.all %}
+    <input type="submit" class="btn btn-danger" value="Remove">
+    {% else %}
+    <a href="" class="btn btn-success">Add to Cat</a>
+    {% endif %}
+</form>
