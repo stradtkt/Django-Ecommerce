@@ -15,6 +15,5 @@ def carts_home(request):
     if qs.count() == 1:
         cart_obj.first()
     else:
-        cart_obj = cart_create()
-    cart_obj = Cart.objects.get(id=cart_id)
+        cart_obj = Cart.objects.new(user=None)
     return render(request, "carts/index.html", {})
